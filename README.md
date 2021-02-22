@@ -45,4 +45,6 @@ alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
 - files.ini：
 展示文件
 
-
+## TODO
+- 显示最近编辑的文件
+- 显示最近打开的文件夹
