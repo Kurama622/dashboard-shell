@@ -4,6 +4,13 @@
 
 - figlet
 
+## 展示
+![dashboard-shell-full](./screenshot/dashboard-full.png)
+
+![dashboard-shell-mini](./screenshot/dashboard-mini.png)
+
+![dashboard-use](./screenshot/dashboard-use.gif)
+
 ## 安装
 ```bash
 git clone https://github.com/demonlord1997/dashboard-shell
