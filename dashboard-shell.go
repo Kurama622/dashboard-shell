@@ -454,7 +454,7 @@ func layout(g *gocui.Gui) error {
     maxX, maxY := g.Size()
     var beginBoxPosX int
     var beginBoxPosY int
-    var iShowV3 = (maxY/2 > 8) && (maxX > 73)
+    var iShowV3 = (maxY/2 > 8) && (maxX > 75)
     beginBoxPosX = maxX/2 - 3*folderLength/2 - 1
     if iShowV3 {
         beginBoxPosY = maxY/2
@@ -525,7 +525,7 @@ func layout(g *gocui.Gui) error {
     }
 
     if iShowV3{
-        if v, err := g.SetView("v3", (maxX-72)/2, maxY/2-2-8, (maxX+73)/2, maxY/2); err != nil {
+        if v, err := g.SetView("v3", (maxX-72)/2, maxY/2-2-8, (maxX+75)/2, maxY/2); err != nil {
             if err != gocui.ErrUnknownView{
                 return err
             }
