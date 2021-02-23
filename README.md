@@ -21,7 +21,12 @@ alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
 
 
 ## 展示
+
+当你的terminal空间较大时，会在上方显示一个日期
+
 ![dashboard-shell-full](./screenshot/dashboard-full.png)
+
+当你的terminal空间较小时，则不显示日期，但会给你的两个子窗口添加边框
 
 ![dashboard-shell-mini](./screenshot/dashboard-mini.png)
 
