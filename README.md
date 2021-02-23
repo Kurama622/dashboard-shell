@@ -2,12 +2,15 @@
 
 ## 依赖
 
-- figlet
+- `figlet`
     + `Arch: sudo pacman -S figlet`
     + `Mac: brew install figlet`
     + `ubuntu: sudo apt-get install figlet`
 
+你不一定按照我说的去安装，`figlet`的安装方式有很多种
+
 ## 安装
+
 ```bash
 $ git clone https://github.com/demonlord1997/dashboard-shell
 $ cd dashboard-shell
@@ -30,6 +33,8 @@ alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
 
 ![dashboard-shell-mini](./screenshot/dashboard-mini.png)
 
+你可以使用`dashboard-shell`来打开目录或者选择编辑文件，你可以运行`shell`命令，打开软件等等
+
 ![dashboard-use](./screenshot/dashboard-use.gif)
 
 
@@ -45,16 +50,46 @@ alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
 | `o`     | 打开输入框                                                      |
 
 ## 配置
-配置文件在`~/.config/dashboard-shell`目录下。
+配置文件在`~/.config/dashboard-shell`目录下的`config.ini`文件中。
+`config.ini`的示例文件如下：
 
-- config：
+```ini
+[editor]
+name=nvim
+
+[folders]
+name = \
+       ~/Desktop,\
+       ~/Documents,\
+       ~/Downloads,\
+       ~/Desktop/c++,\
+       ~/.config/nvim,\
+       ~/.config/bspwm,\
+       ~/.config/sxhkd,\
+       ~/.config/alacritty,\
+       ~/.config/dashboard-shell,\
+       ~/Desktop/blog
+
+[files]
+name = \
+      ~/.config/bspwm/bspwmrc,\
+      ~/.config/nvim/init.vim,\
+      ~/.config/nvim/dein_lazy.toml,\
+      ~/.config/sxhkd/sxhkdrc,\
+      ~/.config/alacritty/alacritty.yml,\
+      ~/.config/zsh/aliases.zsh,\
+      ~/.zshrc,\
+      ~/.config/dashboard-shell/config.ini,\
+      ~/.config/dashboard-shell/files.ini,\
+      ~/.config/dashboard-shell/folders.ini
+```
+
+- `editor`：
 可以设置打开文件的编辑器
-
-- folders.ini：
-展示文件夹
-
-- files.ini：
-展示文件
+- `folders`：
+设置要展示文件夹
+- `files`：
+设置要展示文件
 
 ## TODO
 - 显示最近编辑的文件
