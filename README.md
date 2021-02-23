@@ -3,6 +3,22 @@
 ## 依赖
 
 - figlet
+    + `Arch: sudo pacman -S figlet`
+    + `Mac: brew install figlet`
+    + `ubuntu: sudo apt-get install figlet`
+
+## 安装
+```bash
+$ git clone https://github.com/demonlord1997/dashboard-shell
+$ cd dashboard-shell
+$ ./build.sh
+```
+在`.zhsrc` / `.bashrc`中添加
+```bash
+alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
+```
+然后`source ~/.zshrc` / `source ~/.bashrc`
+
 
 ## 展示
 ![dashboard-shell-full](./screenshot/dashboard-full.png)
@@ -11,16 +27,6 @@
 
 ![dashboard-use](./screenshot/dashboard-use.gif)
 
-## 安装
-```bash
-git clone https://github.com/demonlord1997/dashboard-shell
-cd dashboard-shell
-./build.sh
-```
-在`.zhsrc` / `.bashrc`中添加
-```bash
-alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
-```
 
 ## 快捷键
 | key     | function                                                        |
