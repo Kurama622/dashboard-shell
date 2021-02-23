@@ -345,7 +345,7 @@ func main() {
     if err != nil {
         log.Fatal("Fail to read file: ", err)
     }
-    editor = cfg.Section("settings").Key("editor").String()
+    editor = cfg.Section("editor").Key("name").String()
     g, err := gocui.NewGui(gocui.OutputNormal)
     g.InputEsc = true
     if err != nil{
@@ -475,11 +475,11 @@ func layout(g *gocui.Gui) error {
             v.Frame = true
         }
         v.SelFgColor = gocui.ColorRed
-        cfg, err := ini.Load(HOME+"/.config/dashboard-shell/folders.ini")
+        cfg, err := ini.Load(HOME+"/.config/dashboard-shell/config.ini")
         if err != nil {
             log.Fatal("Fail to open folder: ", err)
         }
-        folderStrings := cfg.Section("folders").Key("path").String()
+        folderStrings := cfg.Section("folders").Key("name").String()
         folderlist = strings.Split(folderStrings, ",")
 
         for i := range itemNumber {
@@ -501,11 +501,11 @@ func layout(g *gocui.Gui) error {
 
         //v.Highlight = false
         v.SelFgColor = gocui.ColorRed
-        cfg, err := ini.Load(HOME+"/.config/dashboard-shell/files.ini")
+        cfg, err := ini.Load(HOME+"/.config/dashboard-shell/config.ini")
         if err != nil {
             log.Fatal("Fail to read file: ", err)
         }
-        fileStrings := cfg.Section("files").Key("path").String()
+        fileStrings := cfg.Section("files").Key("name").String()
         filelist = strings.Split(fileStrings, ",")
 
         for i := range itemNumber {
