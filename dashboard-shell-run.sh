@@ -2,4 +2,11 @@ COMMAND=`dashboard-shell `
 #echo $COMMAND
 clear
 eval $COMMAND
-eval $SHELL
+
+cur_sh=`echo $SHELL | awk -F "/" '{print $NF}'`
+sh_num=`ps | grep $cur_sh | wc -l`
+
+if [ $sh_num -le 1 ]; then
+    eval $SHELL
+fi
+
