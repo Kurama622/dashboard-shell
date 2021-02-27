@@ -19,6 +19,7 @@ $ ./build.sh
 在`.zhsrc` / `.bashrc`中添加
 ```bash
 alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
+alias q="source $HOME/.config/dashboard-shell/add-recent-path.sh && exit"
 ```
 然后`source ~/.zshrc` / `source ~/.bashrc`
 
@@ -37,17 +38,20 @@ alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
 
 ![dashboard-use](./screenshot/dashboard-use.gif)
 
+当你输入q退出终端时，会更新你最近打开的文件夹
+
 
 ## 快捷键
-| key     | function                                                        |
-|---------|-----------------------------------------------------------------|
-| `q`/`Q` | 退出 dashboard-shell                                            |
-| `esc`   | 如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell |
-| `0-9`   | 选择当前窗口下的选项                                            |
-| `j`/`k` | 光标下/上                                                       |
-| `h`/`l` | 到左边/右边的窗口                                               |
-| `tab`   | 切换窗口                                                        |
-| `o`     | 打开输入框                                                      |
+| key                                          | function                                                                      |
+|----------------------------------------------|-------------------------------------------------------------------------------|
+| `esc`                                        | 退出当前窗口：如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell |
+| `0-9`                                        | 选择当前窗口下的选项0-9                                                       |
+| `q`，`w`， `e`, ..., `p`(qwerty键盘的第一行) | 选择当前窗口下的选项10-19                                                     |
+| `j`/`k`                                      | 光标下/上                                                                     |
+| `h`/`l`                                      | 到左边/右边的窗口                                                             |
+| `tab`                                        | 切换窗口                                                                      |
+| `o`                                          | 打开输入框                                                                    |
+| `r`                                          | 打开最近打开过的文件夹                                                                |
 
 ## 配置
 配置文件在`~/.config/dashboard-shell`目录下的`config.ini`文件中。
@@ -93,4 +97,3 @@ name = \
 
 ## TODO
 - 显示最近编辑的文件
-- 显示最近打开的文件夹

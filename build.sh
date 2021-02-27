@@ -2,7 +2,7 @@
 
 CONFIG=$HOME/.config/dashboard-shell
 mkdir $CONFIG -p
-cp config.ini dashboard-shell-run.sh $CONFIG
+cp config.ini dashboard-shell-run.sh add-recent-path.sh $CONFIG
 
 if [ ! -d /usr/local/bin  ]; then
   sudo mkdir /usr/local/bin
