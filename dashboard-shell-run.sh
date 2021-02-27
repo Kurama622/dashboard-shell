@@ -1,5 +1,4 @@
-COMMAND=`dashboard-shell `
-#echo $COMMAND
+COMMAND=`dashboard-shell`
 clear
 eval $COMMAND
 
@@ -10,3 +9,4 @@ if [ $sh_num -le 1 ]; then
     eval $SHELL
 fi
 
+#echo $COMMAND
