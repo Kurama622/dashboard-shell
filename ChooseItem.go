@@ -7,12 +7,12 @@ import (
 
 
 func goToNumberPos0(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[0])
-    } else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[0])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[0])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[0])
+    } else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[0])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[0])
     }
     err := quit(g, v)
     if err != nil {
@@ -22,12 +22,12 @@ func goToNumberPos0(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos1(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[1])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[1])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[1])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[1])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[1])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[1])
     }
     err := quit(g, v)
     if err != nil {
@@ -37,12 +37,12 @@ func goToNumberPos1(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos2(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[2])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[2])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[2])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[2])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[2])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[2])
     }
     err := quit(g, v)
     if err != nil {
@@ -52,12 +52,12 @@ func goToNumberPos2(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos3(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[3])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[3])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[3])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[3])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[3])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[3])
     }
     err := quit(g, v)
     if err != nil {
@@ -67,12 +67,12 @@ func goToNumberPos3(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos4(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[4])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[4])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[4])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[4])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[4])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[4])
     }
     err := quit(g, v)
     if err != nil {
@@ -82,12 +82,12 @@ func goToNumberPos4(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos5(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[5])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[5])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[5])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[5])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[5])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[5])
     }
     err := quit(g, v)
     if err != nil {
@@ -97,12 +97,12 @@ func goToNumberPos5(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos6(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[6])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[6])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[6])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[6])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[6])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[6])
     }
     err := quit(g, v)
     if err != nil {
@@ -112,12 +112,12 @@ func goToNumberPos6(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos7(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[7])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[7])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[7])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[7])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[7])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[7])
     }
     err := quit(g, v)
     if err != nil {
@@ -127,12 +127,12 @@ func goToNumberPos7(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos8(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[8])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[8])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[8])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[8])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[8])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[8])
     }
     err := quit(g, v)
     if err != nil {
@@ -142,12 +142,12 @@ func goToNumberPos8(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos9(g *gocui.Gui, v *gocui.View) error {
-    if v == varray[0]{
-        fmt.Println("cd " + folderlist[9])
-    }else if v == varray[1] {
-        fmt.Println(editor + " " + filelist[9])
-    } else if v == varray[2] {
-        fmt.Println("cd " + recentFolderList[9])
+    if v == g_varray[0]{
+        fmt.Println("cd " + g_folderlist[9])
+    }else if v == g_varray[1] {
+        fmt.Println(g_editor + " " + g_filelist[9])
+    } else if v == g_varray[2] {
+        fmt.Println("cd " + g_recentFolderList[9])
     }
     err := quit(g, v)
     if err != nil {
@@ -157,7 +157,7 @@ func goToNumberPos9(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos10(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[10])
+    fmt.Println("cd " + g_recentFolderList[10])
     err := quit(g, v)
     if err != nil {
         return err
@@ -166,7 +166,7 @@ func goToNumberPos10(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos11(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[11])
+    fmt.Println("cd " + g_recentFolderList[11])
     err := quit(g, v)
     if err != nil {
         return err
@@ -175,7 +175,7 @@ func goToNumberPos11(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos12(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[12])
+    fmt.Println("cd " + g_recentFolderList[12])
     err := quit(g, v)
     if err != nil {
         return err
@@ -184,7 +184,7 @@ func goToNumberPos12(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos13(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[13])
+    fmt.Println("cd " + g_recentFolderList[13])
     err := quit(g, v)
     if err != nil {
         return err
@@ -193,7 +193,7 @@ func goToNumberPos13(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos14(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[14])
+    fmt.Println("cd " + g_recentFolderList[14])
     err := quit(g, v)
     if err != nil {
         return err
@@ -202,7 +202,7 @@ func goToNumberPos14(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos15(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[15])
+    fmt.Println("cd " + g_recentFolderList[15])
     err := quit(g, v)
     if err != nil {
         return err
@@ -211,7 +211,7 @@ func goToNumberPos15(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos16(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[16])
+    fmt.Println("cd " + g_recentFolderList[16])
     err := quit(g, v)
     if err != nil {
         return err
@@ -220,7 +220,7 @@ func goToNumberPos16(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos17(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[17])
+    fmt.Println("cd " + g_recentFolderList[17])
     err := quit(g, v)
     if err != nil {
         return err
@@ -229,7 +229,7 @@ func goToNumberPos17(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos18(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[18])
+    fmt.Println("cd " + g_recentFolderList[18])
     err := quit(g, v)
     if err != nil {
         return err
@@ -238,7 +238,7 @@ func goToNumberPos18(g *gocui.Gui, v *gocui.View) error {
 }
 
 func goToNumberPos19(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println("cd " + recentFolderList[19])
+    fmt.Println("cd " + g_recentFolderList[19])
     err := quit(g, v)
     if err != nil {
         return err

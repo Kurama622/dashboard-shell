@@ -9,16 +9,16 @@ func openInputBox(g *gocui.Gui, v *gocui.View) error {
         if err != gocui.ErrUnknownView {
             return err
         }
-        vinput = v
+        g_vinput = v
         v.Editable = true
         v.Wrap = true
     }
     if _, err := g.SetCurrentView("input"); err != nil {
         return err
     }
-    varray = append(varray, v)
-    viewArr = append(viewArr, "input")
-    curInputView = len(viewArr) - 1
+    g_varray = append(g_varray, v)
+    g_viewArr = append(g_viewArr, "input")
+    g_curInputView = len(g_viewArr) - 1
     return nil
 }
 

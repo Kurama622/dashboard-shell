@@ -10,7 +10,7 @@ func runFolderShell(g *gocui.Gui, v *gocui.View) error {
     var err error
     _, cy := v.Cursor()
 
-    fmt.Println("cd " + folderlist[cy])
+    fmt.Println("cd " + g_folderlist[cy])
     err = quit(g, v)
     if err != nil {
         return err
@@ -22,7 +22,7 @@ func runRecentFolderShell(g *gocui.Gui, v *gocui.View) error {
     var err error
     _, cy := v.Cursor()
 
-    fmt.Println("cd " + recentFolderList[cy])
+    fmt.Println("cd " + g_recentFolderList[cy])
     err = quit(g, v)
     if err != nil {
         return err
@@ -33,7 +33,7 @@ func runFileShell(g *gocui.Gui, v *gocui.View) error {
     var err error
     _, cy := v.Cursor()
 
-    fmt.Println(editor+ " " + filelist[cy])
+    fmt.Println(g_editor+ " " + g_filelist[cy])
     err = quit(g, v)
     if err != nil {
         return err

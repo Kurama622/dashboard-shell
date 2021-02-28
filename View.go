@@ -30,59 +30,62 @@ func chooseV2(g *gocui.Gui, v *gocui.View) error {
 }
 
 func nextView(g *gocui.Gui, v *gocui.View) error {
-    varray[(active) % len(viewArr)].Highlight = false
-    nextIndex := (active + 1) % len(viewArr)
-    name := viewArr[nextIndex]
+    g_varray[(g_active) % len(g_viewArr)].Highlight = false
+    nextIndex := (g_active + 1) % len(g_viewArr)
+    name := g_viewArr[nextIndex]
     if _, err := setCurrentViewOnTop(g, name); err != nil {
         return err
     }
-    g.Cursor = true
+    //g.Cursor = true
     //g.Highlight = true
-    active = nextIndex
-    varray[active].Highlight = true
+    g_active = nextIndex
+    g_varray[g_active].Highlight = true
     return nil
 }
 
 func preView(g *gocui.Gui, v *gocui.View) error {
-    varray[(active) % len(viewArr)].Highlight = false
-    curActive := active - 1
+    g_varray[(g_active) % len(g_viewArr)].Highlight = false
+    curActive := g_active - 1
     if curActive < 0 {
-        curActive = len(viewArr)
+        curActive = len(g_viewArr)
     }
-    prevIndex := (curActive) % len(viewArr)
-    name := viewArr[prevIndex]
+    prevIndex := (curActive) % len(g_viewArr)
+    name := g_viewArr[prevIndex]
     if _, err := setCurrentViewOnTop(g, name); err != nil {
         return err
     }
-    g.Cursor = true
-    active = prevIndex
-    varray[active].Highlight = true
+    //g.Cursor = true
+    g_active = prevIndex
+    g_varray[g_active].Highlight = true
     return nil
 }
 
 
 // dynamic nextView
 func dynextView(g *gocui.Gui, disableCurrent bool) error {
-    next := curInputView + 1
-    if next > len(viewArr)-1 {
-        next = 0
-    }
-    if _, err := g.SetCurrentView(viewArr[next]); err != nil {
+    next := g_active  % len(g_viewArr)
+    //if next > len(g_viewArr)-1 {
+        //next = 0
+    //}
+    //if next < 0 {
+        //next = len(g_viewArr)
+    //}
+    if _, err := g.SetCurrentView(g_viewArr[next]); err != nil {
         return err
     }
-    curInputView = next
+    g_curInputView = next
     return nil
 }
 
 func delView(g *gocui.Gui) error {
-    if len(viewArr) <= 1 {
+    if len(g_viewArr) <= 1 {
         return nil
     }
-    varray =  varray[:len(varray)-1]
-    if err := g.DeleteView(viewArr[curInputView]); err != nil {
+    g_varray =  g_varray[:len(g_varray)-1]
+    if err := g.DeleteView(g_viewArr[g_curInputView]); err != nil {
         return err
     }
-    viewArr = append(viewArr[:curInputView], viewArr[curInputView+1:]...)
+    g_viewArr = append(g_viewArr[:g_curInputView], g_viewArr[g_curInputView+1:]...)
     return dynextView(g, false)
 }
 

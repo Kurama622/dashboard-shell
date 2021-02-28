@@ -14,31 +14,34 @@ import (
 )
 
 var (
-    curInputView = 2
-    viewArr = []string{"v1", "v2"}
-    active  = 0
-    selectView = 0
-    varray = []*gocui.View{}
-    vinput *gocui.View
-    fileNumber = [10]int{0,1,2,3,4,5,6,7,8,9}
-    folderlist []string
-    recentFolderList []string
-    filelist []string
-    HOME string
-    editor string
-    folderLength = 22
-    itermHeight = 11
+    g_curInputView = 2
+    g_viewArr = []string{"v1", "v2"}
+    g_active  = 0
+    g_selectView = 0
+    g_varray = []*gocui.View{}
+    g_vinput *gocui.View
+    g_fileNumber = [10]int{0,1,2,3,4,5,6,7,8,9}
+    g_folderlist []string
+    g_recentFolderList []string
+    g_RFNumber int
+    g_filelist []string
+    g_HOME string
+    g_editor string
+    g_folderLength = 22
+    g_itermHeight = 11
+    //g_cursorx int
+    //g_cursory int
     //selectNum = 0
 )
 
 
 func main() {
-    HOME, _ = Home()
-    cfg, err := ini.Load(HOME+"/.config/dashboard-shell/config.ini")
+    g_HOME, _ = Home()
+    cfg, err := ini.Load(g_HOME+"/.config/dashboard-shell/config.ini")
     if err != nil {
         log.Fatal("Fail to read file: ", err)
     }
-    editor = cfg.Section("editor").Key("name").String()
+    g_editor = cfg.Section("editor").Key("name").String()
     g, err := gocui.NewGui(gocui.OutputNormal)
     g.InputEsc = true
     if err != nil{

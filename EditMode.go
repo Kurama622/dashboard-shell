@@ -6,7 +6,7 @@ import (
 )
 
 func editMode(g *gocui.Gui, v *gocui.View) error {
-    fmt.Println(editor)
+    fmt.Println(g_editor)
     err := quit(g, v)
     if err != nil {
         return err

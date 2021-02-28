@@ -51,6 +51,8 @@ alias q="source $HOME/.config/dashboard-shell/add-recent-path.sh && exit"
 | `k`/ &uarr;                       | 光标向上移动                                                                  |
 | `l`/ &rarr;                       | 到右边的窗口                                                                  |
 | `h`/ &larr;                       | 到左边的窗口                                                                  |
+| `g`                               | 跳转到当前窗口的第一个选项                                                    |
+| `G`                               | 跳转到当前窗口的最后一个选项                                                  |
 | `tab`                             | 切换窗口                                                                      |
 | `o`                               | 打开输入框                                                                    |
 | `e`                               | 打开编辑器                                                                    |

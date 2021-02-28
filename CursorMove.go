@@ -28,3 +28,17 @@ func cursorUp(g *gocui.Gui, v *gocui.View) error {
     return nil
 }
 
+func cursorBottom(g *gocui.Gui, v *gocui.View) error {
+    if v == g_varray[0] || v == g_varray[1]{
+        v.SetCursor(0, 9);
+    } else if v == g_varray[2] {
+        v.SetCursor(0, g_RFNumber-2);
+    }
+    return nil
+}
+
+
+func cursorTop(g *gocui.Gui, v *gocui.View) error {
+    v.SetCursor(0, 0);
+    return nil
+}
