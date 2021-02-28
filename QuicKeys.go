@@ -17,16 +17,31 @@ func quicKeys(g *gocui.Gui){
         if err := g.SetKeybinding(c, gocui.KeyEsc, gocui.ModNone, quit); err != nil {
             log.Panicln(err)
         }
+        if err := g.SetKeybinding(c, 'e', gocui.ModNone, editMode); err != nil {
+            log.Panicln(err)
+        }
         if err := g.SetKeybinding(c, 'l', gocui.ModNone, nextView); err != nil {
             log.Panicln(err)
         }
+        if err := g.SetKeybinding(c, gocui.KeyArrowRight, gocui.ModNone, nextView); err != nil {
+            log.Panicln(err)
+        }
         if err := g.SetKeybinding(c, 'h', gocui.ModNone, preView); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, gocui.KeyArrowLeft, gocui.ModNone, preView); err != nil {
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, 'o', gocui.ModNone, openInputBox); err != nil {
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, 'r', gocui.ModNone, openRecentFolder); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, 'q', gocui.ModNone, goToNumberPos10); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, 'Q', gocui.ModNone, goToNumberPos10); err != nil {
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, gocui.KeyTab, gocui.ModNone, nextView); err != nil {
@@ -36,6 +51,15 @@ func quicKeys(g *gocui.Gui){
 
     for _,c := range []string{"v1", "v2", "RecentFolder"} {
         if err := g.SetKeybinding(c, 'j', gocui.ModNone, cursorDown); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, 'k', gocui.ModNone, cursorUp); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, gocui.KeyArrowDown, gocui.ModNone, cursorDown); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, gocui.KeyArrowUp, gocui.ModNone, cursorUp); err != nil {
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, 'k', gocui.ModNone, cursorUp); err != nil {
@@ -71,36 +95,36 @@ func quicKeys(g *gocui.Gui){
         if err := g.SetKeybinding(c, '9', gocui.ModNone, goToNumberPos9); err != nil {
             log.Panicln(err)
         }
-        if err := g.SetKeybinding("RecentFolder", 'q', gocui.ModNone, goToNumberPos10); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'w', gocui.ModNone, goToNumberPos11); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'e', gocui.ModNone, goToNumberPos12); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'r', gocui.ModNone, goToNumberPos13); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 't', gocui.ModNone, goToNumberPos14); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'y', gocui.ModNone, goToNumberPos15); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'u', gocui.ModNone, goToNumberPos16); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'i', gocui.ModNone, goToNumberPos17); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'o', gocui.ModNone, goToNumberPos18); err != nil {
-            log.Panicln(err)
-        }
-        if err := g.SetKeybinding("RecentFolder", 'p', gocui.ModNone, goToNumberPos19); err != nil {
-            log.Panicln(err)
-        }
+    }
+    if err := g.SetKeybinding("RecentFolder", 'q', gocui.ModNone, goToNumberPos10); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'w', gocui.ModNone, goToNumberPos11); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'e', gocui.ModNone, goToNumberPos12); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'r', gocui.ModNone, goToNumberPos13); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 't', gocui.ModNone, goToNumberPos14); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'y', gocui.ModNone, goToNumberPos15); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'u', gocui.ModNone, goToNumberPos16); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'i', gocui.ModNone, goToNumberPos17); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'o', gocui.ModNone, goToNumberPos18); err != nil {
+        log.Panicln(err)
+    }
+    if err := g.SetKeybinding("RecentFolder", 'p', gocui.ModNone, goToNumberPos19); err != nil {
+        log.Panicln(err)
     }
 
     // run shell command
