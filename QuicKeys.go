@@ -38,10 +38,10 @@ func quicKeys(g *gocui.Gui){
         if err := g.SetKeybinding(c, 'r', gocui.ModNone, openRecentFolder); err != nil {
             log.Panicln(err)
         }
-        if err := g.SetKeybinding(c, 'q', gocui.ModNone, goToNumberPos10); err != nil {
+        if err := g.SetKeybinding(c, 'q', gocui.ModNone, quit); err != nil {
             log.Panicln(err)
         }
-        if err := g.SetKeybinding(c, 'Q', gocui.ModNone, goToNumberPos10); err != nil {
+        if err := g.SetKeybinding(c, 'Q', gocui.ModNone, quit); err != nil {
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, gocui.KeyTab, gocui.ModNone, nextView); err != nil {
@@ -146,9 +146,6 @@ func quicKeys(g *gocui.Gui){
     if err := g.SetKeybinding("RecentFolder", gocui.KeyEnter, gocui.ModNone, runRecentFolderShell); err != nil {
         log.Panicln(err)
     }
-
-
-
 
 
     if err := g.SetKeybinding("", gocui.KeyCtrlQ, gocui.ModNone, chooseV1); err != nil {
