@@ -30,6 +30,7 @@ func layout(g *gocui.Gui) error {
         g_varray = append(g_varray, v)
         //fmt.Println(active)
         v.Highlight = true
+        v.Wrap=true
         if iShowV3{
             v.Frame = false
         }else{
