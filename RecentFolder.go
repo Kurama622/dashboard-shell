@@ -13,6 +13,7 @@ func openRecentFolder(g *gocui.Gui, v *gocui.View) error{
     var RecentFolderNumber []int
     var showString string
     var ssLength int
+    var n string
 
     text, ioerr := ioutil.ReadFile(g_HOME+"/.config/dashboard-shell/RecFolder")
     if ioerr != nil{
@@ -31,6 +32,7 @@ func openRecentFolder(g *gocui.Gui, v *gocui.View) error{
         }
         v.Highlight = true
         v.SelFgColor = gocui.ColorRed
+        v.Title = "RECENT FOLDER"
         //v.Frame = false
     }
 
@@ -42,7 +44,29 @@ func openRecentFolder(g *gocui.Gui, v *gocui.View) error{
         if i<10 {
             showString = "["+ strconv.Itoa(i) +"] " + " \t"+ g_recentFolderList[i]
         }else{
-            showString = "["+ strconv.Itoa(i) +"]" + " \t"+ g_recentFolderList[i]
+            switch i{
+                case 10:
+                    n = "q"
+                case 11:
+                    n = "w"
+                case 12:
+                    n = "e"
+                case 13:
+                    n = "r"
+                case 14:
+                    n = "t"
+                case 15:
+                    n = "y"
+                case 16:
+                    n = "u"
+                case 17:
+                    n = "i"
+                case 18:
+                    n = "o"
+                case 19:
+                    n = "p"
+            }
+            showString = "["+ n +"] " + " \t"+ g_recentFolderList[i]
         }
         ssLength = len(showString)
         if ssLength >= 3*g_folderLength{
