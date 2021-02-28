@@ -1,14 +1,34 @@
 package main
 
-import "github.com/jroimartin/gocui"
+import (
+    //"fmt"
+    "strconv"
+    "github.com/jroimartin/gocui"
+)
 
 func cursorDown(g *gocui.Gui, v *gocui.View) error {
+    var l string
+    var err error
+    var prel string
+    var i int
     if v != nil {
         cx, cy := v.Cursor()
-        if err := v.SetCursor(cx, cy+1); err != nil {
-            ox, oy := v.Origin()
-            if err := v.SetOrigin(ox, oy+1); err != nil {
-                return err
+        prel, _ = v.Line(cy)
+        for i=1; ;i++{
+            l, err = v.Line(cy+i)
+            if err != nil {
+                l = ""
+            }
+            if prel != l{
+                break
+            }
+        }
+        if l != ""{
+            if err = v.SetCursor(cx, cy+i); err != nil {
+                ox, oy := v.Origin()
+                if err = v.SetOrigin(ox, oy+i); err != nil {
+                    return err
+                }
             }
         }
     }
@@ -29,8 +49,20 @@ func cursorUp(g *gocui.Gui, v *gocui.View) error {
 }
 
 func cursorBottom(g *gocui.Gui, v *gocui.View) error {
+    var l string
+    var err error
     if v == g_varray[0] || v == g_varray[1]{
-        v.SetCursor(0, 9);
+        if l, err = v.Line(9); err != nil {
+            l = ""
+        }
+        curNumber, _ := strconv.Atoi(l[1:2])
+        diffNumber := 9 - curNumber
+        if diffNumber != 0 {
+            v.SetCursor(0, 9);
+            v.MoveCursor(0, diffNumber, false)
+        }else{
+            v.SetCursor(0, 9);
+        }
     } else if v == g_varray[2] {
         v.SetCursor(0, g_RFNumber-2);
     }
@@ -39,6 +71,22 @@ func cursorBottom(g *gocui.Gui, v *gocui.View) error {
 
 
 func cursorTop(g *gocui.Gui, v *gocui.View) error {
-    v.SetCursor(0, 0);
+    var l string
+    var err error
+
+    if v == g_varray[0] || v == g_varray[1]{
+        if l, err = v.Line(0); err != nil {
+            l = ""
+        }
+        curNumber, _ := strconv.Atoi(l[1:2])
+        if curNumber != 0 {
+            v.SetCursor(0, 0);
+            v.MoveCursor(0, -curNumber, false)
+        }else{
+            v.SetCursor(0, 0);
+        }
+    } else if v == g_varray[2] {
+        v.SetCursor(0, 0);
+    }
     return nil
 }
