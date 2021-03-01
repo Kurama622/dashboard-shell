@@ -42,22 +42,22 @@ alias q="source $HOME/.config/dashboard-shell/add-recent-path.sh && exit"
 
 
 ## 快捷键
-| key                               | function                                                                      |
-|-----------------------------------|-------------------------------------------------------------------------------|
-| `q`/`Q`                           | 退出 dashboard-shell                                                          |
-| `esc`                             | 退出当前窗口：如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell |
-| `0-9`                             | 选择当前窗口下的选项0-9                                                       |
-| `j`/ &darr;                       | 光标向下移动                                                                  |
-| `k`/ &uarr;                       | 光标向上移动                                                                  |
-| `l`/ &rarr;                       | 到右边的窗口                                                                  |
-| `h`/ &larr;                       | 到左边的窗口                                                                  |
-| `g`                               | 跳转到当前窗口的第一个选项                                                    |
-| `G`                               | 跳转到当前窗口的最后一个选项                                                  |
-| `tab`                             | 切换窗口                                                                      |
-| `o`                               | 打开输入框                                                                    |
-| `e`                               | 打开编辑器                                                                    |
-| `r`                               | 打开最近打开过的文件夹                                                        |
-| `qwe ... p`(`qwerty`键盘的第一行) | 选择当前窗口（最近文件夹窗口）下的选项10-19                                   |
+| key                               | function                                                                                              |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------|
+| `Q`                               | 退出 dashboard-shell                                                                                  |
+| `q`                               | 如果不处于Recent Folder窗口中，则退出 dashboard-shell，处于Recent Folder窗口中，则选择当前窗口的q选项 |
+| `esc`                             | 退出当前窗口：如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell                         |
+| `j`/ &darr;                       | 光标向下移动                                                                                          |
+| `k`/ &uarr;                       | 光标向上移动                                                                                          |
+| `l`/ &rarr;                       | 到右边的窗口                                                                                          |
+| `h`/ &larr;                       | 到左边的窗口                                                                                          |
+| `g`                               | 跳转到当前窗口的第一个选项                                                                            |
+| `G`                               | 跳转到当前窗口的最后一个选项                                                                          |
+| `tab`                             | 切换窗口                                                                                              |
+| `o`                               | 打开输入框                                                                                            |
+| `e`                               | 打开编辑器                                                                                            |
+| `r`                               | 打开最近打开过的文件夹                                                                                |
+按下选项前的数字或字母可以选择当前窗口下对应的选项。
 
 ## 配置
 配置文件在`~/.config/dashboard-shell`目录下的`config.ini`文件中。
@@ -82,16 +82,16 @@ name = \
 
 [files]
 name = \
+      ~/.zshrc,\
       ~/.config/bspwm/bspwmrc,\
       ~/.config/nvim/init.vim,\
       ~/.config/nvim/dein_lazy.toml,\
       ~/.config/sxhkd/sxhkdrc,\
       ~/.config/alacritty/alacritty.yml,\
       ~/.config/zsh/aliases.zsh,\
-      ~/.zshrc,\
       ~/.config/dashboard-shell/config.ini,\
-      ~/.config/dashboard-shell/files.ini,\
-      ~/.config/dashboard-shell/folders.ini
+      ~/.config/dashboard-shell/dashboard-shell-run.sh,\
+      ~/.config/dashboard-shell/add-recent-path.sh
 ```
 
 - `editor`：
