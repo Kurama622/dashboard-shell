@@ -45,7 +45,7 @@ alias q="source $HOME/.config/dashboard-shell/add-recent-path.sh && exit"
 | key                               | function                                                                                              |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------|
 | `Q`                               | 退出 dashboard-shell                                                                                  |
-| `q`                               | 如果不处于Recent Folder窗口中，则退出 dashboard-shell，处于Recent Folder窗口中，则选择当前窗口的q选项 |
+| `q`                               | 如果不处于RECENT FOLDER窗口中，则退出 dashboard-shell，否则，选择当前窗口的q选项 |
 | `esc`                             | 退出当前窗口：如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell                         |
 | `j`/ &darr;                       | 光标向下移动                                                                                          |
 | `k`/ &uarr;                       | 光标向上移动                                                                                          |
