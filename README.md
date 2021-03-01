@@ -57,6 +57,7 @@ alias q="source $HOME/.config/dashboard-shell/add-recent-path.sh && exit"
 | `o`                               | 打开输入框                                                                                            |
 | `e`                               | 打开编辑器                                                                                            |
 | `r`                               | 打开最近打开过的文件夹                                                                                |
+
 按下选项前的数字或字母可以选择当前窗口下对应的选项。
 
 ## 配置
