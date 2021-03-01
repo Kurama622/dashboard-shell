@@ -41,9 +41,6 @@ func quicKeys(g *gocui.Gui){
         if err := g.SetKeybinding(c, 'q', gocui.ModNone, quit); err != nil {
             log.Panicln(err)
         }
-        if err := g.SetKeybinding(c, 'Q', gocui.ModNone, quit); err != nil {
-            log.Panicln(err)
-        }
         if err := g.SetKeybinding(c, gocui.KeyTab, gocui.ModNone, nextView); err != nil {
             log.Panicln(err)
         }
@@ -54,6 +51,9 @@ func quicKeys(g *gocui.Gui){
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, 'k', gocui.ModNone, cursorUp); err != nil {
+            log.Panicln(err)
+        }
+        if err := g.SetKeybinding(c, 'Q', gocui.ModNone, quit); err != nil {
             log.Panicln(err)
         }
         if err := g.SetKeybinding(c, gocui.KeyArrowDown, gocui.ModNone, cursorDown); err != nil {
