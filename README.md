@@ -16,12 +16,8 @@ $ git clone https://github.com/demonlord1997/dashboard-shell
 $ cd dashboard-shell
 $ ./build.sh
 ```
-在`.zhsrc` / `.bashrc`中添加
-```bash
-alias ds='. $HOME/.config/dashboard-shell/dashboard-shell-run.sh'
-alias q="source $HOME/.config/dashboard-shell/add-recent-path.sh && exit"
-```
-然后`source ~/.zshrc` / `source ~/.bashrc`
+在终端输入ds即可打开dashboard-shell。
+如果你用zsh，你在终端输入q即可更新最近打开的目录并退出终端，当你下一次打开dashboard-shell时，按下r即可看到你最近去过的目录，与zsh中的d命令不同，当你打开一个新终端的时候，d命令显示你最近去过的目录为空，因为它无法读取你上一次退出终端之前的信息。它仅在当前终端有效。
 
 
 ## 展示
@@ -103,4 +99,4 @@ name = \
 设置要展示文件
 
 ## TODO
-- 显示最近编辑的文件
+- 添加自定义快捷键打开软件
