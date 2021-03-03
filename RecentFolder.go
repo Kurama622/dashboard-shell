@@ -25,7 +25,7 @@ func openRecentFolder(g *gocui.Gui, v *gocui.View) error{
         RecentFolderNumber = append(RecentFolderNumber, n_rf)
     }
 
-    v, err := g.SetView("RecentFolder", maxX/2-3*g_folderLength/2-2, maxY/2-g_RFNumber/2, maxX/2+3*g_folderLength/2+1, maxY/2+g_RFNumber-g_RFNumber/2)
+    v, err := g.SetView("RecentFolder", maxX/2-3*g_folderLength/2-2, maxY/2-g_RFNumber/2, maxX/2+3*g_folderLength/2, maxY/2+g_RFNumber-g_RFNumber/2)
     if err != nil {
         if err != gocui.ErrUnknownView {
             return err
