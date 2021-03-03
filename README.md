@@ -41,16 +41,6 @@ $ ./build.sh
 | dashboard-shell-full                     | dashboard-shell-mini                     |
 |------------------------------------------|------------------------------------------|
 | ![full](./screenshot/dashboard-full.png) | ![mini](./screenshot/dashboard-mini.png) |
-<!--<details>-->
-<!--<summary><font color="green">显示图片</font></summary>-->
-<!--<img src="./screenshot/dashboard-full.png"/>-->
-<!--</details>-->
-
-
-<!--<details>-->
-<!--<summary><font color="green">显示图片</font></summary>-->
-<!--<img src="./screenshot/dashboard-mini.png"/>-->
-<!--</details>-->
 
 
 你可以按下r来显示最近打开的目录，输入q退出终端，再次打开dashboard-shell，则会看到你之前去过的目录
@@ -62,7 +52,7 @@ $ ./build.sh
 | 打开最近目录、更新最近目录 | <details><summary><font color="blue">点击显示动图</font></summary><img src="./screenshot/recentAndq.gif"/></details>    |
 
 
-你可以在`config.ini`中自定义一些软件或命令的快捷键
+你可以在`config.ini`中自定义一些软件或命令的快捷键，例如`ctrl-r`打开`ranger`，`n`输出系统信息等。
 
 | 展示功能     | 图片                                                                                                            |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
