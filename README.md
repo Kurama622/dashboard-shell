@@ -24,19 +24,49 @@ $ ./build.sh
 
 ## 展示
 
-当你的terminal空间较大时，会在上方显示一个日期
+你可以输入ds来打开`dashboard-shell`，当你的terminal空间较大时，会在上方显示一个日期
 
-![dashboard-shell-full](./screenshot/dashboard-full.png)
+
+<details>
+<summary>显示图片</summary>
+<img src="./screenshot/dashboard-full.png"/>
+</details>
 
 当你的terminal空间较小时，则不显示日期，但会给你的两个子窗口添加边框
 
-![dashboard-shell-mini](./screenshot/dashboard-mini.png)
+<details>
+<summary>显示图片</summary>
+<img src="./screenshot/dashboard-mini.png"/>
+</details>
 
-你可以使用`dashboard-shell`来打开目录或者选择编辑文件，你可以运行`shell`命令，打开软件等等
 
-![dashboard-use](./screenshot/dashboard-use.gif)
+你可以按下r来显示最近打开的目录，输入q退出终端，再次打开dashboard-shell，则会看到你之前去过的目录
 
-当你输入q退出终端时，会更新你最近打开的文件夹
+<details>
+<summary>显示图片</summary>
+<img src="./screenshot/dashboard-rf.png"/>
+</details>
+
+<details>
+<summary>显示动图</summary>
+<img src="./screenshot/recentAndq.gif"/>
+</details>
+
+
+你可以在`config.ini`中自定义一些软件或命令的快捷键
+
+<details>
+<summary>显示动图</summary>
+<img src="./screenshot/ds-custom.gif"/>
+</details>
+
+你也可以按下`o`输入你想要执行的命令
+
+<details>
+<summary>显示动图</summary>
+<img src="./screenshot/oranger.gif"/>
+</details>
+
 
 
 ## 快捷键
@@ -53,7 +83,6 @@ $ ./build.sh
 | `G`                               | 跳转到当前窗口的最后一个选项                                                                          |
 | `tab`                             | 切换窗口                                                                                              |
 | `o`                               | 打开输入框                                                                                            |
-| `e`                               | 打开编辑器                                                                                            |
 | `r`                               | 打开最近打开过的文件夹                                                                                |
 
 按下选项前的数字或字母可以选择当前窗口下对应的选项。
@@ -68,29 +97,40 @@ name=nvim
 
 [folders]
 name = \
-       ~/Desktop,\
-       ~/Documents,\
-       ~/Downloads,\
-       ~/Desktop/c++,\
-       ~/.config/nvim,\
-       ~/.config/bspwm,\
-       ~/.config/sxhkd,\
-       ~/.config/alacritty,\
-       ~/.config/dashboard-shell,\
-       ~/Desktop/blog
+    ~/Desktop,\
+    ~/Documents/topic,\
+    ~/Downloads,\
+    ~/Desktop/c++,\
+    ~/.config/nvim,\
+    ~/.config/bspwm,\
+    ~/.config/sxhkd,\
+    ~/.config/alacritty,\
+    ~/.config/dashboard-shell,\
+    ~/Desktop/blog
 
 [files]
 name = \
-      ~/.zshrc,\
-      ~/.config/bspwm/bspwmrc,\
-      ~/.config/nvim/init.vim,\
-      ~/.config/nvim/dein_lazy.toml,\
-      ~/.config/sxhkd/sxhkdrc,\
-      ~/.config/alacritty/alacritty.yml,\
-      ~/.config/zsh/aliases.zsh,\
-      ~/.config/dashboard-shell/config.ini,\
-      ~/.config/dashboard-shell/dashboard-shell-run.sh,\
-      ~/.config/dashboard-shell/add-recent-path.sh
+    ~/.zshrc,\
+    ~/.config/zsh/aliases.zsh,\
+    ~/.config/bspwm/bspwmrc,\
+    ~/.config/sxhkd/sxhkdrc,\
+    ~/.config/alacritty/alacritty.yml,\
+    ~/.config/ranger/rc.conf,\
+    ~/.config/ranger/rifle.conf,\
+    ~/.config/nvim/init.vim,\
+    ~/.config/nvim/dein_lazy.toml,\
+    ~/.config/nvim/container
+
+[sh]
+run = ~/.config/dashboard-shell/dashboard-shell-run.sh
+rp = ~/.config/dashboard-shell/add-recent-path.sh
+
+[customize]
+nvim = e
+lazygit = <C-l>
+ranger = R
+neofetch = n
+nvim ~/.config/dashboard-shell/config.ini = <C-c>
 ```
 
 - `editor`：
@@ -99,6 +139,8 @@ name = \
 设置要展示文件夹
 - `files`：
 设置要展示文件
+- `customize`
+设置要运行的软件或命令的快捷键
+- `sh`
+其实没有用，只是为了方便你跳转到`dashboard-shell-run.sh`和`add-recent-path.sh`这两个文件而添加的
 
-## TODO
-- 添加自定义快捷键打开软件
