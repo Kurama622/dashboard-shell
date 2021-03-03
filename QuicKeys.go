@@ -17,9 +17,6 @@ func quicKeys(g *gocui.Gui){
         if err := g.SetKeybinding(c, gocui.KeyEsc, gocui.ModNone, quit); err != nil {
             log.Panicln(err)
         }
-        if err := g.SetKeybinding(c, 'e', gocui.ModNone, editMode); err != nil {
-            log.Panicln(err)
-        }
         if err := g.SetKeybinding(c, 'l', gocui.ModNone, nextView); err != nil {
             log.Panicln(err)
         }
