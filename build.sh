@@ -19,24 +19,46 @@ fi
 CURSHELL=`echo $SHELL | awk -F "/" '{print $NF}'`
 [ $CURSHELL==zsh ]
 
+
 if [ $CURSHELL = bash ]; then
+    if [ ! -f $CONFIG/.dashboard-shell.bash ]; then
+        doWrite=true
+    else
+        doWrite=false
+    fi
    cp .dashboard-shell.sh $CONFIG/.dashboard-shell.bash
-   echo """
+   if $doWrite; then
+       echo """
 # dashboard-shell
 
 [ -f $CONFIG/.dashboard-shell.bash ] && source $CONFIG/.dashboard-shell.bash""" >> $HOME/.bashrc
+   fi
 
 elif [ $CURSHELL = zsh ]; then
+   if [ ! -f $CONFIG/.dashboard-shell.zsh ]; then
+        doWrite=true
+    else
+        doWrite=false
+   fi
    cp .dashboard-shell.sh $CONFIG/.dashboard-shell.zsh
-   echo """
+   if $doWrite; then
+       echo """
 # dashboard-shell
 
 [ -f $CONFIG/.dashboard-shell.zsh ] && source $CONFIG/.dashboard-shell.zsh""" >> $HOME/.zshrc
+   fi
 
 else
+   if [ ! -f $CONFIG/.dashboard-shell.fish ]; then
+        doWrite=true
+    else
+        doWrite=false
+   fi
    cp .dashboard-shell.sh $CONFIG/.dashboard-shell.fish
-   echo """
+   if $doWrite; then
+       echo """
 # dashboard-shell
 
 [ -f $CONFIG/.dashboard-shell.fish ] && source $CONFIG/.dashboard-shell.fish""" >> $HOME/.fishrc
+   fi
 fi
