@@ -29,9 +29,6 @@ var (
     g_editor string
     g_folderLength = 22
     g_itermHeight = 11
-    //g_cursorx int
-    //g_cursory int
-    //selectNum = 0
 )
 
 
@@ -50,6 +47,7 @@ func main() {
 
     defer g.Close()
     g.SetManagerFunc(layout)
+    SetCustomKey(cfg, g)
     quicKeys(g)
 }
 
