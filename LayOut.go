@@ -16,7 +16,7 @@ func layout(g *gocui.Gui) error {
     var beginBoxPosX int
     var beginBoxPosY int
     var iShowV3 = (maxY/2 > 8) && (maxX > 75)
-    beginBoxPosX = maxX/2 - 3*g_folderLength/2 - 2
+    beginBoxPosX = maxX/2 - 3*g_folderLength/2 - 1
     if iShowV3 {
         beginBoxPosY = maxY/2 - 1
     }else{
@@ -35,6 +35,7 @@ func layout(g *gocui.Gui) error {
             v.Frame = false
         }else{
             v.Frame = true
+            v.Title = "FOLDERS"
         }
         v.SelFgColor = gocui.ColorRed
         cfg, err := ini.Load(g_HOME+"/.config/dashboard-shell/config.ini")
@@ -48,7 +49,6 @@ func layout(g *gocui.Gui) error {
             folderName := strings.Split(g_folderlist[i], "/")
             fmt.Fprintln(v,"["+ strconv.Itoa(i) +"]" + "\t "+folderName[len(folderName)-1])
         }
-        //v.Title = "FOLDERS"
     }
     if v, err := g.SetView("v2", beginBoxPosX+g_folderLength+2, beginBoxPosY, maxX-beginBoxPosX-1, beginBoxPosY+g_itermHeight); err != nil {
         if err != gocui.ErrUnknownView {
@@ -59,6 +59,7 @@ func layout(g *gocui.Gui) error {
             v.Frame = false
         }else{
             v.Frame = true
+            v.Title = "FILES"
         }
 
         //v.Highlight = false
@@ -83,7 +84,6 @@ func layout(g *gocui.Gui) error {
                 fmt.Fprintln(v, showString)
             }
         }
-        //v.Title = "FILES"
     }
 
     if iShowV3{
