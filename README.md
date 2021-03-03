@@ -1,4 +1,13 @@
 # dashboard-shell
+<!-- vim-markdown-toc Marked -->
+
+* [依赖](#依赖)
+* [安装](#安装)
+* [展示](#展示)
+* [快捷键](#快捷键)
+* [配置](#配置)
+
+<!-- vim-markdown-toc -->
 
 ## 依赖
 
@@ -24,66 +33,60 @@ $ ./build.sh
 
 ## 展示
 
-你可以输入ds来打开`dashboard-shell`，当你的terminal空间较大时，会在上方显示一个日期
+你可以输入ds来打开`dashboard-shell`，当你的terminal空间较大时，会在上方显示一个日期；当你的terminal空间较小时，则不显示日期，但会给你的两个子窗口添加边框
+
+| dashboard-shell-full                     | dashboard-shell-mini                     |
+|------------------------------------------|------------------------------------------|
+| ![full](./screenshot/dashboard-full.png) | ![mini](./screenshot/dashboard-mini.png) |
+<!--<details>-->
+<!--<summary><font color="green">显示图片</font></summary>-->
+<!--<img src="./screenshot/dashboard-full.png"/>-->
+<!--</details>-->
 
 
-<details>
-<summary><font color="green">显示图片</font></summary>
-<img src="./screenshot/dashboard-full.png"/>
-</details>
-
-当你的terminal空间较小时，则不显示日期，但会给你的两个子窗口添加边框
-
-<details>
-<summary><font color="green">显示图片</font></summary>
-<img src="./screenshot/dashboard-mini.png"/>
-</details>
+<!--<details>-->
+<!--<summary><font color="green">显示图片</font></summary>-->
+<!--<img src="./screenshot/dashboard-mini.png"/>-->
+<!--</details>-->
 
 
 你可以按下r来显示最近打开的目录，输入q退出终端，再次打开dashboard-shell，则会看到你之前去过的目录
 
-<details>
-<summary><font color="green">显示图片</font></summary>
-<img src="./screenshot/dashboard-rf.png"/>
-</details>
 
-<details>
-<summary><font color="blue">显示动图</font></summary>
-<img src="./screenshot/recentAndq.gif"/>
-</details>
+| 展示功能                   | 图片                                                                                                                    |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| 打开最近目录               | <details><summary><font color="green">点击显示图片</font></summary><img src="./screenshot/dashboard-rf.png"/></details> |
+| 打开最近目录、更新最近目录 | <details><summary><font color="blue">点击显示动图</font></summary><img src="./screenshot/recentAndq.gif"/></details>    |
 
 
 你可以在`config.ini`中自定义一些软件或命令的快捷键
 
-<details>
-<summary><font color="blue">显示动图</font></summary>
-<img src="./screenshot/ds-custom.gif"/>
-</details>
+| 展示功能     | 图片                                                                                                            |
+|--------------|-----------------------------------------------------------------------------------------------------------------|
+| 自定义快捷键 | <details><summary><font color="blue">点击显示动图</font></summary><img src="./screenshot/ds-custom.gif"/></details> |
 
 你也可以按下`o`输入你想要执行的命令
-
-<details>
-<summary><font color="blue">显示动图</font></summary>
-<img src="./screenshot/oranger.gif"/>
-</details>
+| 展示功能     | 图片                                                                                                          |
+|--------------|---------------------------------------------------------------------------------------------------------------|
+| 输入执行命令 | <details><summary><font color="blue">点击显示动图</font></summary><img src="./screenshot/oranger.gif"/></details> |
 
 
 
 ## 快捷键
-| key                               | function                                                                                              |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------|
-| `Q`                               | 退出 dashboard-shell                                                                                  |
-| `q`                               | 如果不处于RECENT FOLDER窗口中，则退出 dashboard-shell，否则，选择当前窗口的q选项 |
-| `esc`                             | 退出当前窗口：如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell                         |
-| `j`/ &darr;                       | 光标向下移动                                                                                          |
-| `k`/ &uarr;                       | 光标向上移动                                                                                          |
-| `l`/ &rarr;                       | 到右边的窗口                                                                                          |
-| `h`/ &larr;                       | 到左边的窗口                                                                                          |
-| `g`                               | 跳转到当前窗口的第一个选项                                                                            |
-| `G`                               | 跳转到当前窗口的最后一个选项                                                                          |
-| `tab`                             | 切换窗口                                                                                              |
-| `o`                               | 打开输入框                                                                                            |
-| `r`                               | 打开最近打开过的文件夹                                                                                |
+| key         | function                                                                         |
+|-------------|----------------------------------------------------------------------------------|
+| `Q`         | 退出 dashboard-shell                                                             |
+| `q`         | 如果不处于RECENT FOLDER窗口中，则退出 dashboard-shell，否则，选择当前窗口的q选项 |
+| `esc`       | 退出当前窗口：如果有输入框，退出输入框； 如果没有输入框，退出 dashboard-shell    |
+| `j`/ &darr; | 光标向下移动                                                                     |
+| `k`/ &uarr; | 光标向上移动                                                                     |
+| `l`/ &rarr; | 到右边的窗口                                                                     |
+| `h`/ &larr; | 到左边的窗口                                                                     |
+| `g`         | 跳转到当前窗口的第一个选项                                                       |
+| `G`         | 跳转到当前窗口的最后一个选项                                                     |
+| `tab`       | 切换窗口                                                                         |
+| `o`         | 打开输入框                                                                       |
+| `r`         | 打开最近打开过的文件夹                                                           |
 
 按下选项前的数字或字母可以选择当前窗口下对应的选项。
 
