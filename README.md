@@ -28,14 +28,14 @@ $ ./build.sh
 
 
 <details>
-<summary>显示图片</summary>
+<summary><font color="green">显示图片</font></summary>
 <img src="./screenshot/dashboard-full.png"/>
 </details>
 
 当你的terminal空间较小时，则不显示日期，但会给你的两个子窗口添加边框
 
 <details>
-<summary>显示图片</summary>
+<summary><font color="green">显示图片</font></summary>
 <img src="./screenshot/dashboard-mini.png"/>
 </details>
 
@@ -43,12 +43,12 @@ $ ./build.sh
 你可以按下r来显示最近打开的目录，输入q退出终端，再次打开dashboard-shell，则会看到你之前去过的目录
 
 <details>
-<summary>显示图片</summary>
+<summary><font color="green">显示图片</font></summary>
 <img src="./screenshot/dashboard-rf.png"/>
 </details>
 
 <details>
-<summary>显示动图</summary>
+<summary><font color="blue">显示动图</font></summary>
 <img src="./screenshot/recentAndq.gif"/>
 </details>
 
@@ -56,14 +56,14 @@ $ ./build.sh
 你可以在`config.ini`中自定义一些软件或命令的快捷键
 
 <details>
-<summary>显示动图</summary>
+<summary><font color="blue">显示动图</font></summary>
 <img src="./screenshot/ds-custom.gif"/>
 </details>
 
 你也可以按下`o`输入你想要执行的命令
 
 <details>
-<summary>显示动图</summary>
+<summary><font color="blue">显示动图</font></summary>
 <img src="./screenshot/oranger.gif"/>
 </details>
 
