@@ -65,9 +65,6 @@ func quicKeys(g *gocui.Gui){
         if err := g.SetKeybinding(c, 'G', gocui.ModNone, cursorBottom); err != nil {
             log.Panicln(err)
         }
-        if err := g.SetKeybinding(c, 'k', gocui.ModNone, cursorUp); err != nil {
-            log.Panicln(err)
-        }
         if err := g.SetKeybinding(c, '0', gocui.ModNone, goToNumberPos0); err != nil {
             log.Panicln(err)
         }
