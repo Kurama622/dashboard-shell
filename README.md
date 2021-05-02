@@ -4,6 +4,7 @@
 * [依赖](#依赖)
 * [安装](#安装)
 * [展示](#展示)
+    * [打开历史文件](#打开历史文件)
 * [快捷键](#快捷键)
 * [配置](#配置)
 
@@ -35,6 +36,7 @@ $ ./build.sh
 
 
 ## 展示
+（--- 录屏有卡顿 ---）
 
 你可以输入ds来打开`dashboard-shell`，当你的terminal空间较大时，会在上方显示一个日期；当你的terminal空间较小时，则不显示日期，但会给你的两个子窗口添加边框
 
@@ -63,6 +65,20 @@ $ ./build.sh
 |--------------|---------------------------------------------------------------------------------------------------------------|
 | 输入执行命令 | <details><summary><font color="blue">点击显示动图</font></summary><img src="./screenshot/oranger.gif"/></details> |
 
+### 打开历史文件
+
+你也可以打开历史文件（我用neovim，下面是`dashboard-shell`通过neovim打开历史文件的操作，vim同neovim一样）
+
+1. 首先你的neovim要能够打开历史文件，因为我平时在使用`fzf`这个插件，所以我可以通过在neovim中输入`:History`来打开历史文件。如果你用其他的插件比如`LeaderF`之类的，你记住相应的命令就可以了。
+
+2. 在`dashboard-shell`的配置文件`config.ini`中添加自定义快捷键：
+```ini
+[customize]
+nvim -c 'History' = e
+```
+因为我打开历史文件的命令是History，所以我在neovim启动的时候运行History命令，你可以改成你所使用插件对应的命令。现在我按下e就会打开历史文件。
+
+![history](screenshot/history.gif)
 
 
 ## 快捷键
@@ -122,7 +138,7 @@ run = ~/.config/dashboard-shell/dashboard-shell-run.sh
 rp = ~/.config/dashboard-shell/add-recent-path.sh
 
 [customize]
-nvim = e
+nvim -c 'History' = e
 lazygit = <C-l>
 ranger = R
 neofetch = n
