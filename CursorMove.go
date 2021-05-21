@@ -3,7 +3,7 @@ package main
 import (
     //"fmt"
     "strconv"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
 )
 
 func cursorDown(g *gocui.Gui, v *gocui.View) error {
@@ -51,19 +51,31 @@ func cursorUp(g *gocui.Gui, v *gocui.View) error {
 func cursorBottom(g *gocui.Gui, v *gocui.View) error {
     var l string
     var err error
-    if v == g_varray[0] || v == g_varray[1]{
-        if l, err = v.Line(9); err != nil {
+    if v == g_varray[0]{
+        if l, err = v.Line(g_folderMaxNumber-1); err != nil {
             l = ""
         }
         curNumber, _ := strconv.Atoi(l[1:2])
-        diffNumber := 9 - curNumber
+        diffNumber := g_folderMaxNumber-1 - curNumber
         if diffNumber != 0 {
-            v.SetCursor(0, 9);
+            v.SetCursor(0, g_folderMaxNumber-1);
             v.MoveCursor(0, diffNumber, false)
         }else{
-            v.SetCursor(0, 9);
+            v.SetCursor(0, g_folderMaxNumber-1);
         }
-    } else if v == g_varray[2] {
+    }else if v == g_varray[1]{
+        if l, err = v.Line(g_fileMaxNumber-1); err != nil {
+            l = ""
+        }
+        curNumber, _ := strconv.Atoi(l[1:2])
+        diffNumber := g_fileMaxNumber-1 - curNumber
+        if diffNumber != 0 {
+            v.SetCursor(0, g_fileMaxNumber-1);
+            v.MoveCursor(0, diffNumber, false)
+        }else{
+            v.SetCursor(0, g_fileMaxNumber-1);
+        }
+    }else if v == g_varray[2] {
         v.SetCursor(0, g_RFNumber-2);
     }
     return nil

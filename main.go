@@ -10,7 +10,7 @@ import (
     "os/exec"
     "bytes"
     "gopkg.in/ini.v1"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
 )
 
 var (
@@ -21,7 +21,9 @@ var (
     g_varray = []*gocui.View{}
     g_vinput *gocui.View
     g_fileNumber = [10]int{0,1,2,3,4,5,6,7,8,9}
+    g_fileMaxNumber int
     g_folderlist []string
+    g_folderMaxNumber int
     g_recentFolderList []string
     g_RFNumber int
     g_filelist []string

@@ -5,7 +5,7 @@ import (
     "strconv"
     "strings"
     "io/ioutil"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
 )
 
 func openRecentFolder(g *gocui.Gui, v *gocui.View) error{

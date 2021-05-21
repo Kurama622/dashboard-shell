@@ -2,7 +2,7 @@ package main
 
 import (
     "log"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
 )
 
 func quicKeys(g *gocui.Gui){

@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
 )
 
 func editMode(g *gocui.Gui, v *gocui.View) error {

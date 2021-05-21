@@ -1,6 +1,6 @@
 package main
 
-import "github.com/jroimartin/gocui"
+import "github.com/demonlord1997/gocui"
 
 func openInputBox(g *gocui.Gui, v *gocui.View) error {
     maxX, maxY := g.Size()

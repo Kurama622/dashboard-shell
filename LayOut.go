@@ -8,7 +8,7 @@ import (
     "strconv"
     "os/exec"
     "gopkg.in/ini.v1"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
 )
 
 func layout(g *gocui.Gui) error {
@@ -44,8 +44,8 @@ func layout(g *gocui.Gui) error {
         }
         folderStrings := cfg.Section("folders").Key("name").String()
         g_folderlist = strings.Split(folderStrings, ",")
-
-        for i := range g_fileNumber {
+        g_folderMaxNumber = len(g_folderlist)
+        for i := range g_fileNumber[0:g_folderMaxNumber] {
             folderName := strings.Split(g_folderlist[i], "/")
             fmt.Fprintln(v,"["+ strconv.Itoa(i) +"]" + "\t "+folderName[len(folderName)-1])
         }
@@ -70,8 +70,9 @@ func layout(g *gocui.Gui) error {
         }
         fileStrings := cfg.Section("files").Key("name").String()
         g_filelist = strings.Split(fileStrings, ",")
+        g_fileMaxNumber = len(g_filelist)
 
-        for i := range g_fileNumber {
+        for i := range g_fileNumber[0:g_fileMaxNumber] {
             //showString := "["+ strconv.itoa(i) +"]" + "\t "+ fileName
             showString := "["+ strconv.Itoa(i) +"]" + "\t "+ g_filelist[i]
             ssLength := len(showString)

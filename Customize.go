@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/jroimartin/gocui"
+    "github.com/demonlord1997/gocui"
     "gopkg.in/ini.v1"
 )
 
