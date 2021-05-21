@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-CONFIG=$HOME/.config/dashboard-shell
-mkdir $CONFIG -p
-cp config.ini dashboard-shell-run.sh add-recent-path.sh $CONFIG
-
 if [ ! -d /usr/local/bin  ]; then
   sudo mkdir /usr/local/bin
 fi
@@ -11,14 +7,32 @@ fi
 sysOS=`uname -s`
 if [ $sysOS == "Darwin" ];then
     sudo cp dashboard-shell-mac /usr/local/bin/dashboard-shell
+    if [ ! -x "$(command -v figlet)" ]; then
+        echo "please install figlet!"
+        exit
+    fi
+
 elif [ $sysOS == "Linux" ];then
     sudo cp dashboard-shell /usr/local/bin/dashboard-shell
+    if [ ! -x "$(command -v figlet)" ]; then
+        os=$(cat /etc/os-release 2>/dev/null | grep ^ID= | awk -F= '{print $2}')
+        case "$os" in
+            ubuntu)
+                sudo apt install figlet;;
+            arch)
+                sudo pacman -S figlet;;
+        esac
+    fi
 fi
 
 
-CURSHELL=`echo $SHELL | awk -F "/" '{print $NF}'`
-[ $CURSHELL==zsh ]
+CONFIG=$HOME/.config/dashboard-shell
+mkdir $CONFIG -p
+cp config.ini dashboard-shell-run.sh add-recent-path.sh $CONFIG
+pwd > $CONFIG/.AddRecFolder
+cp $CONFIG/.AddRecFolder $CONFIG/RecFolder
 
+CURSHELL=`echo $SHELL | awk -F "/" '{print $NF}'`
 
 if [ $CURSHELL = bash ]; then
     if [ ! -f $CONFIG/.dashboard-shell.bash ]; then
