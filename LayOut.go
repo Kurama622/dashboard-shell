@@ -11,12 +11,19 @@ import (
     "github.com/demonlord1997/gocui"
 )
 
+/*
+|---------------|-----------------------------|
+|               |                             |
+maxX = k+1.5k+2+2*x
+x =maxX/2 -1 - 2.5k/2
+
+*/
+
 func layout(g *gocui.Gui) error {
     maxX, maxY := g.Size()
-    var beginBoxPosX int
+    var beginBoxPosX int = (maxX)/2 - 5*(g_folderLength)/4 - 1
     var beginBoxPosY int
     var iShowV3 = (maxY/2 > 8) && (maxX > 75)
-    beginBoxPosX = maxX/2 - 3*g_folderLength/2 - 1
     if iShowV3 {
         beginBoxPosY = maxY/2 - 1
     }else{
@@ -46,8 +53,22 @@ func layout(g *gocui.Gui) error {
         g_folderlist = strings.Split(folderStrings, ",")
         g_folderMaxNumber = len(g_folderlist)
         for i := range g_fileNumber[0:g_folderMaxNumber] {
-            folderName := strings.Split(g_folderlist[i], "/")
-            fmt.Fprintln(v,"["+ strconv.Itoa(i) +"]" + "\t "+folderName[len(folderName)-1])
+            showString := "["+ strconv.Itoa(i) +"]" + "\t "+ g_folderlist[i]
+            //fmt.Println(showString)
+            ssLength := len(showString)
+            if ssLength >= g_folderLength{
+                //folderName := strings.Split(g_folderlist[i], "/")
+                //fnLength := len(folderName)
+                showShortString := showString[0:(g_folderLength-13)] + ".." + showString[ssLength-9:ssLength]
+                //showShortString := showString[0:5]+folderName[fnLength-1][0:]
+                fmt.Fprintln(v, showShortString)
+            }else{
+                fmt.Fprintln(v, showString)
+            }
+
+            // ======================================
+            //folderName := strings.Split(g_folderlist[i], "/")
+            //fmt.Fprintln(v,"["+ strconv.Itoa(i) +"]" + "\t "+folderName[len(folderName)-1])
         }
     }
     if v, err := g.SetView("v2", beginBoxPosX+g_folderLength+2, beginBoxPosY, maxX-beginBoxPosX-1, beginBoxPosY+g_itermHeight); err != nil {
@@ -78,6 +99,7 @@ func layout(g *gocui.Gui) error {
             ssLength := len(showString)
             if ssLength >= 2*g_folderLength{
                 fileName := strings.Split(g_filelist[i], "/")
+                //fmt.Println(fileName)
                 fnLength := len(fileName)
                 showShortString := showString[0:(2*g_folderLength-len(fileName[fnLength-1])-5)] + ".../" + fileName[fnLength-1]
                 fmt.Fprintln(v, showShortString)

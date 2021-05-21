@@ -29,7 +29,7 @@ var (
     g_filelist []string
     g_HOME string
     g_editor string
-    g_folderLength = 22
+    g_folderLength = 28
     g_itermHeight = 11
 )
 
