@@ -21,7 +21,7 @@ x =maxX/2 -1 - 2.5k/2
 
 func layout(g *gocui.Gui) error {
     maxX, maxY := g.Size()
-    var beginBoxPosX int = (maxX)/2 - 5*(g_folderLength)/4 - 1
+    var beginBoxPosX int = (maxX)/2 - 5*(g_folderLength)/4
     var beginBoxPosY int
     var iShowV3 = (maxY/2 > 8) && (maxX > 75)
     if iShowV3 {
