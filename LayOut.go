@@ -21,7 +21,7 @@ x =maxX/2 -1 - 2.5k/2
 
 func layout(g *gocui.Gui) error {
     maxX, maxY := g.Size()
-    var beginBoxPosX int = (maxX)/2 - 5*(g_folderLength)/4
+    var beginBoxPosX int = (maxX)/2 - 5*(g_folderLength)/4 + 1
     var beginBoxPosY int
     var iShowV3 = (maxY/2 > 8) && (maxX > 75)
     if iShowV3 {
@@ -71,7 +71,7 @@ func layout(g *gocui.Gui) error {
             //fmt.Fprintln(v,"["+ strconv.Itoa(i) +"]" + "\t "+folderName[len(folderName)-1])
         }
     }
-    if v, err := g.SetView("v2", beginBoxPosX+g_folderLength+2, beginBoxPosY, maxX-beginBoxPosX-1, beginBoxPosY+g_itermHeight); err != nil {
+    if v, err := g.SetView("v2", beginBoxPosX+g_folderLength+1, beginBoxPosY, maxX-beginBoxPosX-1, beginBoxPosY+g_itermHeight); err != nil {
         if err != gocui.ErrUnknownView {
             return err
         }
