@@ -110,7 +110,7 @@ func layout(g *gocui.Gui) error {
     }
 
     if iShowV3{
-        if v, err := g.SetView("v3", (maxX-72)/2, beginBoxPosY-2-7, (maxX+75)/2, beginBoxPosY); err != nil {
+        if v, err := g.SetView("v3", (maxX-72)/2+1, beginBoxPosY-2-7, (maxX+75)/2, beginBoxPosY); err != nil {
             if err != gocui.ErrUnknownView{
                 return err
             }
