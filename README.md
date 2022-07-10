@@ -1,3 +1,5 @@
+** 请使用StartUp [https://github.com/stubbornvegeta/StartUp](https://github.com/stubbornvegeta/StartUp) ! ! ! **
+
 # dashboard-shell
 <!-- vim-markdown-toc Marked -->
 
